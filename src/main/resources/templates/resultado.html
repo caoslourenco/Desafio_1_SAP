@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
             margin: 10px 0;
         }
 
-        .btn-reset {
+        .btn-reset, .btn-play-again {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -46,7 +46,7 @@
             text-decoration: none;
         }
 
-        .btn-reset:hover {
+        .btn-reset:hover, .btn-play-again:hover {
             background-color: #d35400;
         }
     </style>
@@ -60,8 +60,15 @@
         <div class="result-item">Derrotas: <span th:text="${score.derrotas}">0</span></div>
         <div class="result-item">Empates: <span th:text="${score.empates}">0</span></div>
     </div>
-    <form action="/score/reset" method="post">
-        <button type="submit" class="btn-reset">Resetar Score</button>
-    </form>
+
+    <div class="actions">
+         
+        <a href="/" class="btn-play-again">Jogar Novamente</a>
+        
+         
+        <form action="/score/reset" method="post">
+            <button type="submit" class="btn-reset">Resetar Score</button>
+        </form>
+    </div>
 </body>
 </html>
