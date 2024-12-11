@@ -18,12 +18,12 @@ public class WebController {
         this.scoreService = scoreService;
     }
 
-    // Reseta o score
+    // Reseta o score e redireciona para a página reset-score
     @PostMapping("/score/reset")
     public String resetScore(Model model) {
-        scoreService.resetScore(); 
+        scoreService.resetScore();
         model.addAttribute("score", scoreService.getScore());
-        return "index"; // Retorna à página inicial após resetar o score
+        return "reset-score"; // Redireciona para a página de reset do score
     }
 
     // Processa a escolha e exibe o resultado
@@ -33,16 +33,17 @@ public class WebController {
         model.addAttribute("saida", saida);
         model.addAttribute("aEscolha", aEscolha);
         model.addAttribute("score", scoreService.getScore());
-        return "resultado";  // Exibe a página de resultado
+        return "resultado"; // Exibe a página de resultado
     }
 
     // Página inicial onde o jogador faz a escolha
     @GetMapping("/jogo")
     public String jogo(Model model) {
         model.addAttribute("score", scoreService.getScore());
-        return "index"; // Exibe a página inicial com as opções de escolha
+        return "resultado"; // Exibe a página inicial com as opções de escolha
     }
 }
+
 
 
 
