@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Pedra, Papel e Tesoura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef6e4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d35400;
+            font-size: 2.5em;
+        }
+
+        .result-board {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #d35400;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-item {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .btn-reset {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #e67e22;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-reset:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultado do Jogo</h1>
+    <div class="result-board">
+        <div class="result-item">Você escolheu: <span th:text="${aEscolha}">Pedra</span></div>
+        <div class="result-item">Resultado: <span th:text="${saida}">Empate</span></div>
+        <div class="result-item">Vitórias: <span th:text="${score.vitorias}">0</span></div>
+        <div class="result-item">Derrotas: <span th:text="${score.derrotas}">0</span></div>
+        <div class="result-item">Empates: <span th:text="${score.empates}">0</span></div>
+    </div>
+    <form action="/score/reset" method="post">
+        <button type="submit" class="btn-reset">Resetar Score</button>
+    </form>
+</body>
+</html>
