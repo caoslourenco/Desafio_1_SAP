@@ -11,7 +11,6 @@ public class ScoreService {
     @Autowired
     public ScoreRepository scoreRepo;
 
-    // Construtor para injeção de mocked ScoreRepository para tests
     public ScoreService(ScoreRepository scoreRepo) {
             this.scoreRepo = scoreRepo;
     }

@@ -1,13 +1,73 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
-        <title>
-            Este é o projeto dois
-        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escolha o seu movimento</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                max-width: 500px;
+            }
+            h1 {
+                font-size: 1.8rem;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 1.1rem;
+                color: #666;
+                margin-bottom: 30px;
+            }
+            .choices {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 15px;
+            }
+            a {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1.1rem;
+                color: white;
+                background-color: #3498db;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+                width: 120px;
+                text-align: center;
+            }
+            a:hover {
+                background-color: #2980b9;
+            }
+            a:focus {
+                outline: 2px solid #f39c12;
+            }
+        </style>
     </head>
     <body>
-        <p> Qual será o resultado? </p>
-        <a href="/teste?escolha=pedra">Pedra</a>
-        <a href="/teste?escolha=papel">Papel</a>
-        <a href="/teste?escolha=tesoura">Tesoura</a>
+        <div class="container">
+            <h1>Qual será o seu movimento?</h1>
+            <p>Escolha entre Pedra, Papel ou Tesoura:</p>
+            <div class="choices">
+                <a href="/teste?escolha=pedra" aria-label="Escolher Pedra">Pedra</a>
+                <a href="/teste?escolha=papel" aria-label="Escolher Papel">Papel</a>
+                <a href="/teste?escolha=tesoura" aria-label="Escolher Tesoura">Tesoura</a>
+            </div>
+        </div>
     </body>
 </html>
